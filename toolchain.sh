@@ -153,3 +153,9 @@ do
 		sudo gem install $X
 	fi
 done
+
+### Install some java tools
+  mkdir -p ~/Documents/tools
+  cd ~/Documents/tools
+  wget https://github.com/appium/sign/raw/master/dist/sign.jar
+  wget -Oapktool.jar https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.3.jar
