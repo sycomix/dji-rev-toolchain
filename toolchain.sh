@@ -91,7 +91,7 @@ if [ $PKGMGR = "brew" ]; then
 			brew install $X
 			if [ $X = "git-lfs" ]; then
 				git lfs install
-				git lfs install --system
+				sudo git lfs install --system
 			fi
 		fi
 
