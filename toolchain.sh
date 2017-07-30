@@ -114,7 +114,7 @@ if [ $PKGMGR = "brew" ]; then
 fi
 
 ### Install python components
-pip list --format=columns | cut -d " " -f 1 2>&1 > $IPLIST
+pip2 list --format=columns | cut -d " " -f 1 2>&1 > $IPLIST
 PKGLIST="pathlib pyusb pyserial pkcs7"
 for X in $PKGLIST
 do
@@ -122,7 +122,7 @@ do
 	if [ $? -eq 0 ]; then
 		echo "$X is already installed"
 	else
-		pip install $X
+		pip2 install $X
 	fi
 
 done
