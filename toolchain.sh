@@ -63,8 +63,9 @@ function cplist {
 
 PKGMGR=`pkgtype`
 IPLIST=/tmp/pkglist
-### If running on OSX, install homebrew if required
+### If running on OSX, install homebrew and xcode-select if required
 if [ $PKGMGR = "brew" ]; then
+	xcode-select --install 2>/dev/null
 	which brew > /dev/null
 	if [ $? -gt 0 ]; then
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -78,7 +79,7 @@ fi
 
 
 ### Install primary packages
-PKGLIST="python python3 libusb dialog git-lfs wget"
+PKGLIST="python python3 libusb dialog git-lfs wget nodejs"
 cplist $PKGMGR > $IPLIST
 
 if [ $PKGMGR = "brew" ]; then
@@ -159,3 +160,8 @@ done
   cd ~/Documents/tools
   wget https://github.com/appium/sign/raw/master/dist/sign.jar
   wget -Oapktool.jar https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.3.jar
+
+### Install some nodejs components
+  mkdir -p ~/Documents/nodejs
+  cd ~/Documents/nodejs  
+  npm install asar
