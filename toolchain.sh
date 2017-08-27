@@ -156,12 +156,13 @@ do
 done
 
 ### Install some java tools
-  mkdir -p ~/Documents/tools
-  cd ~/Documents/tools
-  wget https://github.com/appium/sign/raw/master/dist/sign.jar
-  wget -Oapktool.jar https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.3.jar
+mkdir -p ~/Documents/tools
+cd ~/Documents/tools
+wget https://github.com/appium/sign/raw/master/dist/sign.jar
+wget -Oapktool.jar https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.3.jar
 
 ### Install some nodejs components
-  mkdir -p ~/Documents/nodejs
-  cd ~/Documents/nodejs  
-  npm install asar
+mkdir -p ~/Documents/nodejs
+cd ~/Documents/nodejs
+npm install asar
+npm install standard --save-dev
